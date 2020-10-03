@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('init/', views.authenticate),
-    path('final/')
+    path('', views.stream_video)
 ]
