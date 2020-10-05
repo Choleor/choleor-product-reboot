@@ -58,13 +58,11 @@ def authenticate(request):
 range_re = re.compile(r'bytes\s*=\s*(\d+)\s*-\s*(\d*)', re.I)
 
 
+@api_view(['GET'])
 def stream_video(request):
     os.chdir('/mnt/c/Users/Jihee/choleor-media/product/')
     token = request.GET.get('token')
     path = token + ".mkv"
-    # http://127.0.0.1:8000/product/token?=HkujLO17Ez8.mkv 로 요청하면 받음
-    # client에게 부여된 token 값으로 교차편집 진행, streaming으로 보내줌
-    # path = 'HkujLO17Ez8.mkv'
     range_header = request.META.get('HTTP_RANGE', '').strip()
     range_match = range_re.match(range_header)
     size = os.path.getsize(path)

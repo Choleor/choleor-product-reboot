@@ -3,7 +3,7 @@ from django.db import models
 
 class EndPose(models.Model):
     end_pose_id = models.CharField(primary_key=True, max_length=50)
-    type = models.BinaryField(max_length=30)
+    type = models.BinaryField(max_length=40)
     x_mean = models.FloatField(default=0.00)
     y_min = models.FloatField(default=0.00)
     duration = models.FloatField(default=0.00)
@@ -14,7 +14,7 @@ class EndPose(models.Model):
 
 class StartPose(models.Model):
     start_pose_id = models.CharField(primary_key=True, max_length=50)
-    type = models.BinaryField(max_length=30)
+    type = models.BinaryField(max_length=40)
     x_mean = models.FloatField(default=0.00)
     y_min = models.FloatField(default=0.00)
     duration = models.FloatField(default=0.00)
